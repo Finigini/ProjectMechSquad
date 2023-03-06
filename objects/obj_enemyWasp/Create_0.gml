@@ -4,13 +4,14 @@
 event_inherited();
 scr_emitterSetup();
 
+depth = -100;
 //unique stuff
 team = "bug";
 airborne = true;
 wireframe = spr_waspWireframe;
 
 //stats
-maxHp = 30;
+maxHp = 15;
 hp = maxHp;
 moveSpeed = 4;
 

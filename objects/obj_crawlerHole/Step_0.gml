@@ -6,10 +6,11 @@ if obj_control.tacticsMode == false
 }
 
 if spawnTimeLeft <= 0 and !place_meeting(x,y,obj_solid)
+and !place_meeting(x,y,obj_solidSky)
 and count > 0
 {
 	count -= 1;
-	instance_create_depth(x,y,0,choose(obj_enemyCrawler,obj_enemyMite));
+	instance_create_depth(x,y,0,choose(obj_enemyCrawler,obj_enemyMite,obj_enemyWasp));
 	if spawnTime > 30
 	{
 		spawnTime -= 30;

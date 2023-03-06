@@ -60,6 +60,7 @@ if obj_control.tacticsMode == false
 				airborne = true;
 				canHitGround = true;
 				projectileSpeed = 7;
+				lifeTime = 60;
 				team = other.team;
 				source = other;
 				damage = other.attackDamage;
@@ -68,15 +69,7 @@ if obj_control.tacticsMode == false
 			}
 		}
 	}
-	//animation
-	if moving == true
-	{
-		image_speed = 1;
-	}
-	else
-	{
-		image_speed = 0
-	}
+	image_speed = 1;
 }
 else
 {

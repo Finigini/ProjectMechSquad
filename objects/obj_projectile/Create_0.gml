@@ -6,6 +6,7 @@ team = "none";
 //stats
 damage = 1;
 projectileSpeed = 1;
+lifeTime = 200;
 airborne = false;
 canHitGround = false;
 

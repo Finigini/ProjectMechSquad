@@ -5,9 +5,11 @@ function scr_fireWeapons()
 	var cannonCD = 30;
 	var cannonSpread = 5;
 	var cannonDamage = 3;
+	var cannonLifeTime = 60;
 	var scattergunCD = 80;
 	var scattergunSpread = 20;
 	var scattergunDamage = 5;
+	var scattergunLifeTime = 30;
 	//weaponCD
 	if weaponLeftCD > 0
 	{
@@ -36,6 +38,7 @@ function scr_fireWeapons()
 				airborne = other.primaryTarget.airborne;
 				source = other.id;
 				damage = cannonDamage;
+				lifeTime = cannonLifeTime;
 				projectileSpeed = 20;
 				direction = point_direction(other.x,other.y,other.primaryTarget.x,other.primaryTarget.y)+cannonSpread-random(cannonSpread*2);
 				image_angle = direction;
@@ -56,6 +59,7 @@ function scr_fireWeapons()
 					airborne = other.primaryTarget.airborne;
 					source = other.id;
 					damage = scattergunDamage;
+					lifeTime = scattergunLifeTime;
 					projectileSpeed = 20;
 					direction = point_direction(other.x,other.y,other.primaryTarget.x,other.primaryTarget.y)+scattergunSpread-random(scattergunSpread*2);
 					image_angle = direction;
@@ -78,6 +82,7 @@ function scr_fireWeapons()
 				airborne = other.primaryTarget.airborne;
 				source = other.id;
 				damage = cannonDamage;
+				lifeTime = cannonLifeTime;
 				projectileSpeed = 20;
 				direction = point_direction(other.x,other.y,other.primaryTarget.x,other.primaryTarget.y)+cannonSpread-random(cannonSpread*2);
 				image_angle = direction;
@@ -98,6 +103,7 @@ function scr_fireWeapons()
 					airborne = other.primaryTarget.airborne;
 					source = other.id;
 					damage = scattergunDamage;
+					lifeTime = scattergunLifeTime;
 					projectileSpeed = 20;
 					direction = point_direction(other.x,other.y,other.primaryTarget.x,other.primaryTarget.y)+scattergunSpread-random(scattergunSpread*2);
 					image_angle = direction;

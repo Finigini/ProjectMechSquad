@@ -113,6 +113,8 @@ if obj_control.tacticsMode == false
 		speed = 0;
 	}
 	//enemy targeting
+	var _targetNearest = noone;
+	var _maxTargetDist = targetingRange;
 	if instance_exists(primaryTarget)
 	{
 		//turn towards enemy
@@ -126,20 +128,41 @@ if obj_control.tacticsMode == false
 			scr_fireWeapons();
 		}
 	}
-	else if distance_to_object(instance_nearest(x,y,obj_target)) < targetingRange
-	{
-		primaryTarget = instance_nearest(x,y,obj_target);
-	}
-	else if distance_to_object(instance_nearest(x,y,obj_targetSky)) < targetingRange
-	{
-		primaryTarget = instance_nearest(x,y,obj_targetSky);
-	}
 	else
 	{
-		primaryTarget = noone;
-		if abs(angle_difference(facingLegs, facingBody)) > 5
+		with (obj_target) 
 		{
-			facingBody += sign(angle_difference(facingLegs,facingBody))*turnspeed;
+			if (team != other.team) 
+			{
+				var dis = point_distance(x, y, other.x, other.y);
+				if (dis < _maxTargetDist) 
+				{
+					_targetNearest = id;
+					_maxTargetDist = dis;
+					other.primaryTarget = _targetNearest;
+				}
+			}
+		}
+		with (obj_targetSky) 
+		{
+			if (team != other.team) 
+			{
+				var dis = point_distance(x, y, other.x, other.y);
+				if (dis < _maxTargetDist) 
+				{
+					_targetNearest = id;
+					_maxTargetDist = dis;
+					other.primaryTarget = _targetNearest;
+				}
+			}
+		}
+		if _targetNearest == noone
+		{
+			primaryTarget = noone;
+			if abs(angle_difference(facingLegs, facingBody)) > 5
+			{
+				facingBody += sign(angle_difference(facingLegs,facingBody))*turnspeed;
+			}
 		}
 	}
 	//dying

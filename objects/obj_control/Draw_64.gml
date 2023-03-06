@@ -18,18 +18,32 @@ var _y = 496;
 if (!surface_exists(surfMinimapEntities)) surfMinimapEntities = surface_create(_w,_h);
 surface_set_target(surfMinimapEntities);
 	draw_clear_alpha(c_black,0.0);
-	with(obj_enemy)
+	with(obj_target)
 	{
 		if (entityOnMinimap == true)
 		{
-			draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,1,1,0,c_red,1);
+			if team == "player"
+			{
+				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,1,1,0,c_lime,1);
+			}
+			else
+			{
+				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,2,2,0,c_red,1);
+			}
 		}
 	}
-	with(obj_mech)
+	with(obj_targetSky)
 	{
 		if (entityOnMinimap == true)
 		{
-			draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,2,2,0,c_lime,1);
+			if team == "player"
+			{
+				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,1,1,0,c_lime,1);
+			}
+			else
+			{
+				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,2,2,0,c_red,1);
+			}
 		}
 	}
 surface_reset_target();
