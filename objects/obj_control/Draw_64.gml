@@ -24,11 +24,11 @@ surface_set_target(surfMinimapEntities);
 		{
 			if team == "player"
 			{
-				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,1,1,0,c_lime,1);
+				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,3,3,0,c_lime,1);
 			}
 			else
 			{
-				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,2,2,0,c_red,1);
+				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,1,1,0,c_red,1);
 			}
 		}
 	}
@@ -38,11 +38,11 @@ surface_set_target(surfMinimapEntities);
 		{
 			if team == "player"
 			{
-				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,1,1,0,c_lime,1);
+				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,2,2,0,c_lime,1);
 			}
 			else
 			{
-				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,2,2,0,c_red,1);
+				draw_sprite_ext(spr_pixel,0,x/TILE_SIZE,y/TILE_SIZE,1,1,0,c_red,1);
 			}
 		}
 	}
